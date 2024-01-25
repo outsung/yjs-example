@@ -12,7 +12,7 @@ interface User {
 }
 const yDoc = new Y.Doc();
 const provider = new WebrtcProvider("yjs-example", yDoc, {
-  signaling: ["wss://y-webrtc-ckynwnzncc.now.sh"],
+  signaling: ["wss://expressjs-on-koyeb-outsung.koyeb.app"],
 });
 
 export function useYjs(): User[] {
