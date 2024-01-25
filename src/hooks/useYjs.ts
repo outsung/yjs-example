@@ -11,7 +11,9 @@ interface User {
   y: string;
 }
 const yDoc = new Y.Doc();
-const provider = new WebrtcProvider("test", yDoc);
+const provider = new WebrtcProvider("yjs-example", yDoc, {
+  signaling: ["wss://y-webrtc-ckynwnzncc.now.sh"],
+});
 
 export function useYjs(): User[] {
   const [users, setUsers] = useState<User[]>([]);
