@@ -72,6 +72,7 @@ const onconnection = (conn) => {
     pongReceived = true;
   });
   conn.on("close", () => {
+    console.log("close");
     subscribedTopics.forEach((topicName) => {
       const subs = topics.get(topicName) || new Set();
       subs.delete(conn);
@@ -85,6 +86,7 @@ const onconnection = (conn) => {
   conn.on(
     "message",
     /** @param {object} message */ (message) => {
+      console.log("message", message.type);
       if (typeof message === "string" || message instanceof Buffer) {
         message = JSON.parse(message);
       }
